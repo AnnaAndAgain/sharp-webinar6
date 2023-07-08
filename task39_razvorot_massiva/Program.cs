@@ -32,7 +32,7 @@ int[] ReverseArrayNew (int[] tmpArray)
 }
 
 // В том же  массиве
-int[] ReverseArraySame (int[] tmpArray)
+void ReverseArraySame (int[] tmpArray)
 {
     int tmpElem = 0;
     for (int i = 0; i < tmpArray.Length/2; i++)
@@ -40,14 +40,14 @@ int[] ReverseArraySame (int[] tmpArray)
         tmpElem = tmpArray[i];
         tmpArray[i] = tmpArray[tmpArray.Length-i-1];
         tmpArray[tmpArray.Length-i-1] = tmpElem;
-    }
-    return tmpArray;
+    };
 }
 
-int[] array = FillArrayRandom(6, 0, 10);
+int[] array = FillArrayRandom(6, 0, 100);
 PrintArray(array);
 PrintArray(ReverseArrayNew(array));
 System.Console.WriteLine();
-int[] array2 = FillArrayRandom(6, 0, 10);
+int[] array2 = FillArrayRandom(7, 0, 100);
 PrintArray(array2);
-PrintArray(ReverseArraySame(array2));
+ReverseArraySame(array2);
+PrintArray(array2);
